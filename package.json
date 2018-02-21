@@ -4,7 +4,8 @@
   "description": "study koa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/app"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,11 @@
   },
   "devDependencies": {
     "eslint": "^4.17.0",
-    "eslint-plugin-react": "^7.6.1"
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
