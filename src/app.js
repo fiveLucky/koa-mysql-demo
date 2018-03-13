@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const { write, read, status } = require('./controllers/operateFiles')
 
 const app = new Koa()
 
@@ -10,3 +11,7 @@ app.use(async (ctx, next) => {
 
 app.listen(3000)
 console.log('server is running at port 3000')
+
+const data = read()
+write(data)
+status()
