@@ -1,17 +1,23 @@
-const Koa = require('koa')
-const { write, read, status } = require('./controllers/operateFiles')
+const Koa = require("koa");
 
-const app = new Koa()
+const app = new Koa();
 
 app.use(async (ctx, next) => {
-  await next()
-  ctx.response.type = 'text/html'
-  ctx.response.body = '<h1>hello world!</h1>'
-})
+  try {
+    await next();
+  } catch (e) {
+    console.log("error");
 
-app.listen(3000)
-console.log('server is running at port 3000')
+    ctx.body = "hello world!";
+  }
+});
 
-const data = read()
-write(data)
-status()
+app.use((ctx, next) => {
+  console.log("fffff");
+  return next();
+});
+app.use(() => {
+  throw new Error("sdfd");
+});
+
+app.listen(3000);
